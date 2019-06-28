@@ -9,17 +9,17 @@ script:
   - docker run mikebaoc/react-test npm test -- --coverage
  
 after_success:
-  - docker build -t mikebaoc/multi-client ./client
-  - docker build -t mikebaoc/multi-nginx ./nginx
-  - docker build -t mikebaoc/multi-server ./server
-  - docker build -t mikebaoc/multi-worker ./worker
+  - docker build -t mikeaocdockerid/multi-client ./client
+  - docker build -t mikeaocdockerid/multi-nginx ./nginx
+  - docker build -t mikeaocdockerid/multi-server ./server
+  - docker build -t mikeaocdockerid/multi-worker ./worker
   # login to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # take all these build images to docker hub
-  - docker push mikebaoc/multi-client
-  - docker push mikebaoc/multi-nginx
-  - docker push mikebaoc/multi-server
-  - docker push mikebaoc/multi-worker
+  - docker push mikeaocdockerid/multi-client
+  - docker push mikeaocdockerid/multi-nginx
+  - docker push mikeaocdockerid/multi-server
+  - docker push mikeaocdockerid/multi-worker
 
 
 
